@@ -9,6 +9,7 @@
         ],
         "sourceMaps": "inline"
     },
+    "bugs": "https://github.com/ibi-group/isotropic-mixin/issues",
     "contributors": [
         "Duane Sibilly <duane.sibilly@ibigroup.com>"
     ],
@@ -45,9 +46,11 @@
         },
         "root": true
     },
+    "homepage": "https://github.com/ibi-group/isotropic-mixin",
     "license": "BSD-3-Clause",
     "main": "lib/mixin.js",
     "name": "isotropic-mixin",
+    "repository": "ibi-group/isotropic-mixin",
     "scripts": {
         "build": "babel js -d lib",
         "lint": "eslint js test",
