@@ -1,20 +1,14 @@
-import {
-    describe,
-    it
-} from 'mocha';
-
-import {
-    expect
-} from 'chai';
+import _chai from 'chai';
+import _mocha from 'mocha';
 
 import mixin from '../js/mixin.js';
 
-describe('mixin', () => {
-    it('should be a function', () => {
-        expect(mixin).to.be.a('function');
+_mocha.describe('mixin', () => {
+    _mocha.it('should be a function', () => {
+        _chai.expect(mixin).to.be.a('function');
     });
 
-    it('should copy own properties from one object to another', () => {
+    _mocha.it('should copy own properties from one object to another', () => {
         let d = 0;
 
         const from = {
@@ -42,16 +36,16 @@ describe('mixin', () => {
             'c',
             'd',
             'e'
-        ].forEach(propertyName => expect(Reflect.getOwnPropertyDescriptor(to, propertyName)).to.deep.equal(Reflect.getOwnPropertyDescriptor(from, propertyName)));
+        ].forEach(propertyName => _chai.expect(Reflect.getOwnPropertyDescriptor(to, propertyName)).to.deep.equal(Reflect.getOwnPropertyDescriptor(from, propertyName)));
 
-        expect(from).to.have.property('d', 0);
-        expect(to).to.have.property('d', 0);
+        _chai.expect(from).to.have.property('d', 0);
+        _chai.expect(to).to.have.property('d', 0);
         from.d = 1;
-        expect(from).to.have.property('d', 1);
-        expect(to).to.have.property('d', 1);
+        _chai.expect(from).to.have.property('d', 1);
+        _chai.expect(to).to.have.property('d', 1);
         to.d = 2;
-        expect(from).to.have.property('d', 2);
-        expect(to).to.have.property('d', 2);
-        expect(to).to.have.property('e', 'e');
+        _chai.expect(from).to.have.property('d', 2);
+        _chai.expect(to).to.have.property('d', 2);
+        _chai.expect(to).to.have.property('e', 'e');
     });
 });
