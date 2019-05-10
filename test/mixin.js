@@ -1,11 +1,10 @@
 import _chai from 'chai';
+import _mixin from '../js/mixin.js';
 import _mocha from 'mocha';
-
-import mixin from '../js/mixin.js';
 
 _mocha.describe('mixin', () => {
     _mocha.it('should be a function', () => {
-        _chai.expect(mixin).to.be.a('function');
+        _chai.expect(_mixin).to.be.a('function');
     });
 
     _mocha.it('should copy own properties from one object to another', () => {
@@ -28,7 +27,7 @@ _mocha.describe('mixin', () => {
             value: 'e'
         });
 
-        mixin(from, to);
+        _mixin(from, to);
 
         [
             'a',
