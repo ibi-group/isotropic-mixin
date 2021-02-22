@@ -1,6 +1,6 @@
-import _chai from 'chai';
+import _chai from 'isotropic-dev-dependencies/lib/chai.js';
 import _mixin from '../js/mixin.js';
-import _mocha from 'mocha';
+import _mocha from 'isotropic-dev-dependencies/lib/mocha.js';
 
 _mocha.describe('mixin', () => {
     _mocha.it('should be a function', () => {
