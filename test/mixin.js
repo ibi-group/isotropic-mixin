@@ -35,7 +35,9 @@ _mocha.describe('mixin', () => {
             'c',
             'd',
             'e'
-        ].forEach(propertyName => _chai.expect(Reflect.getOwnPropertyDescriptor(to, propertyName)).to.deep.equal(Reflect.getOwnPropertyDescriptor(from, propertyName)));
+        ].forEach(propertyName => {
+            _chai.expect(Reflect.getOwnPropertyDescriptor(to, propertyName)).to.deep.equal(Reflect.getOwnPropertyDescriptor(from, propertyName));
+        });
 
         _chai.expect(from).to.have.property('d', 0);
         _chai.expect(to).to.have.property('d', 0);
