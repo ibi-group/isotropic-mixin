@@ -3,6 +3,7 @@
     "bugs": "https://github.com/ibi-group/isotropic-mixin/issues",
     "description": "Mixin function copies property descriptors from one object to another",
     "devDependencies": {
+        "eslint": "~9.8.0",
         "isotropic-dev-dependencies": "~0.3.0"
     },
     "engines": {
