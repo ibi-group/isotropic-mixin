@@ -1,13 +1,13 @@
 import _chai from 'isotropic-dev-dependencies/lib/chai.js';
-import _mixin from '../js/mixin.js';
-import _mocha from 'isotropic-dev-dependencies/lib/mocha.js';
+import _mixin from '../lib/mixin.js';
+import _test from 'node:test';
 
-_mocha.describe('mixin', () => {
-    _mocha.it('should be a function', () => {
+_test.describe('mixin', () => {
+    _test.it('should be a function', () => {
         _chai.expect(_mixin).to.be.a('function');
     });
 
-    _mocha.it('should copy own properties from one object to another', () => {
+    _test.it('should copy own properties from one object to another', () => {
         let d = 0;
 
         const from = {

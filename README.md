@@ -124,7 +124,7 @@ console.log(Object.getOwnPropertyNames(_target)); // []
 // isotropic-mixin does copy non-enumerable properties
 _mixin(_source, _target);
 console.log(Object.getOwnPropertyNames(_target)); // ['hidden']
-console.log(target.hidden); // 'I am hidden'
+console.log(_target.hidden); // 'I am hidden'
 ```
 
 ### Extending Configuration Objects
@@ -137,7 +137,7 @@ const _defaultConfig = {
         fontSize: 14,
         get isDarkMode () {
             return this.theme === 'dark';
-        }
+        },
         showNotifications: true,
         theme: 'light'
     },
