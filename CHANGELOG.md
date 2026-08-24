@@ -1,4 +1,13 @@
-# Changelog
+# isotropic-mixin Changelog
+
+## 0.14.1 - 2026-08-23
+
+### Changed
+
+- Recommends `node ^26.7.0` / `npm ^11.19.0`.
+- `repository` now uses npm's preferred object form with explicit `type` and `url` properties rather than the `github:` shorthand. This is package metadata only.
+
+No runtime behavior changed in this release.
 
 ## 0.14.0 - 2026-07-15
 
@@ -28,7 +37,7 @@ Nothing to change beyond running on Node 26.
 
 ### Changed
 
-- A comprehensive README was added, documenting the full public interface with worked examples.
+- A comprehensive README was added, documenting the full public interface with examples.
 - `eslint` pinned at `~9.8.0` as a direct dev dependency to guarantee the intended version is installed.
 - `isotropic-dev-dependencies` bumped to `~0.3.1`.
 
@@ -54,7 +63,7 @@ import _mixin from 'isotropic-mixin';
 
 ### Changed
 
-- ESLint moved to flat config (`eslint.config.js`); the `eslintConfig` block was removed from `package.json`.
+- ESLint moved to flat config (`eslint.config.js`) so the `eslintConfig` block was removed from `package.json`.
 - Coverage tooling switched from `nyc` to `c8`.
 - `repository` given an explicit `github:` prefix.
 - The `forEach` callback body was rewritten as a block statement rather than a concise arrow expression, so it no longer returns the result of `Reflect.defineProperty`. `forEach` discards return values, so behavior is identical.
@@ -66,7 +75,9 @@ No runtime behavior changed in this release.
 
 ### Changed
 
-- The entire dev toolchain was replaced by a single `isotropic-dev-dependencies` dev dependency. The Babel, ESLint, and nyc configuration blocks were removed from `package.json` in favor of shared configuration, and git hooks are now installed via Husky on `postinstall`.
+- The entire dev toolchain was replaced by a single `isotropic-dev-dependencies` dev dependency.
+- The Babel, ESLint, and nyc configuration blocks were removed from `package.json` in favor of shared configuration.
+- Git hooks are now installed via Husky on `postinstall`.
 - Recommends `node ^14.15.5` / `npm ^7.5.4`
 
 No runtime behavior changed in this release.
@@ -75,7 +86,8 @@ No runtime behavior changed in this release.
 
 ### Changed
 
-- A `files` allowlist was added so only `lib` is published. Previously the tarball was filtered by `.npmignore`, which was removed.
+- A `files` allowlist was added so only `lib` is published.
+- `.npmignore` was removed.
 - Dependency refresh: ESLint 7, Mocha 8, nyc 15, Babel 7.10, `cross-env` 7.
 - Lint target raised to ECMAScript 2020.
 - Recommends `node ^12.18.3` / `npm ^6.14.6`.
@@ -188,4 +200,4 @@ Initial release.
 - Default export is a function `(from, to)` that copies every own property of `from` onto `to`.
 - Uses `Reflect.ownKeys`, so both string-keyed and symbol-keyed own properties are copied, including non-enumerable ones.
 - Copies via `Reflect.getOwnPropertyDescriptor` and `Reflect.defineProperty`, so getters and setters are transferred as accessors rather than being invoked, and enumerability, writability, and configurability are preserved. This is the key difference from `Object.assign`.
-- Requires `babel-runtime` at runtime. No `engines` constraint declared.
+- Requires `babel-runtime` at runtime.
